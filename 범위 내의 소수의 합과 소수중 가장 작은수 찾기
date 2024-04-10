@@ -1,0 +1,15 @@
+M = int(input(' '))
+N = int(input(' '))
+sum = 0
+min = 0
+list = [ ]
+for i in range(M, N+1):
+     check = 0
+     for j in range(2,i):
+          if i%j == 0:
+               check=1
+     if check == 0:
+          sum += i
+          list.append(i)
+print(sum)
+print(list[0])
