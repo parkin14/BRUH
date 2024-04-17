@@ -1,0 +1,26 @@
+import random
+korean = 0
+Korean = 0
+com= random.randint(1,3)
+if com == 1:
+     korean = '가위'
+elif com == 2:
+     korean = '바위'
+elif com == 3:
+     korean = '보'
+user=int(input('가위:1 ,바위:2 ,보:3\n'))
+if user == 1:
+     Korean = '가위'
+elif user == 2:
+     Korean = '바위'
+elif user == 3:
+     Korean = '보'
+print('COM(%s): USER(%s)' %(korean, Korean))
+if com == user:
+     print('비김')
+elif com == user + 1:
+     print('ai한테 진 수쥰 나왔다ㅋ')
+elif com == user -1:
+     print('ai 수쥰 나왔다ㅋ')
+else:
+     print('ai 수쥰 나왔다ㅋ')
