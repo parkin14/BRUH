@@ -1,0 +1,7 @@
+n = input("")
+if n == 'M':
+     print("Man")
+elif n == 'W':
+     print("Woman")
+else:
+     print("What?")
