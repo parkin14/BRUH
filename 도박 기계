@@ -1,0 +1,29 @@
+from random import*
+import time
+x=randint(1, 7)
+y=randint(1, 7)
+z=randint(1, 7)
+print("첫번째 숫자: %d" %(x))
+time.sleep(2)
+print("두번째 숫자: %d" %(y))
+time.sleep(2)
+print("세번째 숫자: %d" %(z))
+time.sleep(4)
+if x == y == z:
+     print("%d" %(10000 + x * 1000))
+elif x == y != z:
+     print("%d" %(1000 + x * 100))
+elif x != y == z:
+     print("%d" %(1000 + y * 100))
+elif x == z != y:
+     print("%d" %(1000 + z * 100))
+elif x > y and x > z:
+     print("%d" %(x * 100))
+elif x < y and z < y:
+     print("%d" %(y * 100))
+elif x < z and z > y:
+     print("%d" %(z * 100))
+elif x==y==z==7:
+     print("777 $JACKPOT$ 777")
+     time.sleep(1)
+     print("100,000,000,000")
