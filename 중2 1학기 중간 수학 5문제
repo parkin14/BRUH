@@ -1,0 +1,55 @@
+import time
+score=0
+print("시험을 시작한 후 enter 키로 넘어가기(수동)")
+a=input("이름: ")
+b=int(input("학년: "))
+c=int(input("반: "))
+d=int(input("번호: "))
+print("2024학년도 1학기 1차 지필평가")
+time.sleep(1.5)
+print("(%d)학년 (수학)과 과목코드(4)"%(b))
+time.sleep(1)
+print("(%d)학년 (%d)반 (%d)번 이름(%s)"%(b,c,d,a))
+print("시험 시작")
+input()
+print("1. 순환소수를 표현한 것으로 옳은 것은?[20점]")
+first=int(input("① 0.272727...=0.27'\n② 2.020202...=2.2'0'\n③ 0.303030...=0.3'03'\n④ 2.4858585...=2.4'85'\n⑤ 1.154154154...=1.1'54'\n"))
+if first==5:
+    score += 20
+input()
+print("2. 두 분수 3/7 과 16/11 을 소수로 나타내면 순환소수가 된다. 이때, 3/7의 소수점 아래 11번째 자리의 숫자를 a, 16/11의 소수점 아래 17번째 자리의 숫자를 b라 할 때, a+b는?[20점]")
+second=int(input("① 9\n② 10\n③ 11\n④ 12\n⑤ 13\n"))
+if second==3:
+    score += 20
+input()
+print("3. 두 수의 대소관계가 옳은 것은?[20점]")
+third=int(input("① 1.7'1' < 1.7'\n② 4.7' > 4.8\n③ 0.19' < 0.19\n④ 0.1'0' >0.1'\n⑤ 2.6' < 2.6'0'\n"))
+if third==1:
+    score += 20
+input()
+print("4. 4²×6⁵×25⁴이 n자리 자연수라고 할 때, 2ⁿ÷2³의 값은[20점]?")
+fourth=int(input("① 64\n② 128\n③ 256\n④ 512\n⑤ 1024\n"))
+if fourth==4:
+    score += 20
+input()
+print("5. 3a³b³÷{(ab²)³×□÷(-2a³b²)²}=4a³일 때, □ 안에 알맞은 것은?[20점]")
+fifth=int(input("① ⅓a²b\n② 3a³b\n③ 3a³b³\n④ ⅓a³b⁷\n⑤ 8/3×a⁹b⁷\n"))
+if fifth==2:
+    score += 20
+input()
+print("시험이 종료되었습니다")
+time.sleep(1)
+print("당신의 총점은...(2초 정도 기다려 주십시오)")
+time.sleep(2)
+if score==100:
+    print("100점!! 100점입니다!!")
+elif score==80:
+    print("80점 나쁘진 않군요")
+elif score==60:
+    print("60점.. 공부를 조금 더 하셔야 되지 않을까요?")
+elif score==40:
+    print("40점... 공부를 하셨나요?")
+elif score==20:
+    print("20점...")
+elif score==0:
+    print("야 쟤 빵점이래 ㅋㅋㅋㅋ")
