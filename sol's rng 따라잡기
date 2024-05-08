@@ -1,28 +1,38 @@
 from random import*
 import time
 def sols_rng():
-    a=[1,2,3,4,5,6,7,8,9,10]
-    f=(choices(a,[50,25,20,12.5,6.25,3.125,1.5625,0.78125,0.66666666667,0.28571428571],k=1))
+    a=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+    f=(choices(a,[50,25,20,12.5,6.25,3.12,1.56,0.78,0.6,0.28,0.19,0.19,0.128,0.125,0.1],k=1))
     if f==[1]:
-       print("Common")
+       print("Common(1 in 2)")
     elif f==[2]:
-        print("Uncommon")
+        print("Uncommon(1 in 4)")
     elif f==[3]:
-        print('Good')
+        print('Good(1 in 5)')
     elif f==[4]:
-        print('Natural')
+        print('Natural(1 in 8)')
     elif f==[5]:
-        print("Rare")
+        print("Rare(1 in 16)")
     elif f==[6]:
-        print("Divinus")
+        print("Divinus(1 in 32)")
     elif f==[7]:
-        print("Crystallized")
+        print("Crystallized(1 in 64)")
     elif f==[8]:
-        print('Rage')
+        print('Rage(1 in 128)')
     elif f==[9]:
-        print('Topaz')
+        print('Topaz(1 in 150)')
     elif f==[10]:
-        print("Ruby")
+        print("Ruby(1 in 350)")
+    elif f==[11]:
+        print('Emerald(1 in 512)')
+    elif f==[12]:
+        print("Glided(1 in 512)")
+    elif f==[13]:
+        print("Jackpot(1 in 777)")
+    elif f==[14]:
+        print('Sapphire(1 in 800)')
+    elif f==[15]:
+        print("Aquamarine(1 in 900)")
 
 
 thankyou=int(input('빠른 뽑기를 구매하신다면 1, 아니면 2를 쳐주십시오\n'))
@@ -37,4 +47,4 @@ for i in range(4):
     sols_rng()
 
     
-https://sols-rng.fandom.com/ko/wiki/%EC%95%84%EC%9A%B0%EB%9D%BC/%EB%AA%A9%EB%A1%9D 이거 보고 에메랄드부터 함수식에 넣기
+https://sols-rng.fandom.com/ko/wiki/%EC%95%84%EC%9A%B0%EB%9D%BC/%EB%AA%A9%EB%A1%9D 이거 보고 귀중부터 함수식에 넣기
