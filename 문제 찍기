@@ -1,0 +1,10 @@
+from random import*
+a=int(input("문제의 답 형식이 a,b,c,d;A,B,C,D 라면 1/ 1,2,3,4,5 라면 2를 눌러주세요\n"))
+b=int(input("문제의 수 : "))
+x=['A','B','C','D']
+if a==1:
+    for i in range(b):
+        print(choice(x))
+elif a==2:
+    for j in range(b):
+        print(randint(1,5))
