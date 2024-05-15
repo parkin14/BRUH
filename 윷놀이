@@ -1,0 +1,24 @@
+from random import *
+import time
+sum=0
+line=0
+for i in range(4):
+     x=randint(0,1)
+     sum+=x
+     line+=1
+     if line<=3:
+          print(x,end=' ')
+          time.sleep(1)
+     else:
+          print(x)
+          time.sleep(1)
+if sum==4:
+     print('모')
+elif sum==3:
+     print('도')
+elif sum==2:
+     print('개')
+elif sum==1:
+     print('걸')
+elif sum==0:
+     print('윷')
