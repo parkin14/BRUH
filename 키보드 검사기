@@ -1,0 +1,133 @@
+import sys
+import pygame
+from pygame.locals import*
+import random
+pygame.init()
+SCREEN=pygame.display.set_mode((600,600))
+CLOCK=pygame.time.Clock()
+BLACK=(0,0,0)
+WHITE=(255,255,255)
+sysfont=pygame.font.SysFont(None,36)
+txt=sysfont.render("",True,BLACK)
+while True:
+     SCREEN.fill(WHITE)
+     for event in pygame.event.get():
+          if event.type==QUIT:
+               pygame.quit()
+               sys.exit()
+          if event.type==KEYDOWN:
+               if event.key==K_UP:
+                    txt=sysfont.render("UP",True,BLACK)
+               if event.key==K_DOWN:
+                    txt=sysfont.render("DOWN",True,BLACK)
+               if event.key==K_LEFT:
+                    txt=sysfont.render("LEFT",True,BLACK)
+               if event.key==K_RIGHT:
+                    txt=sysfont.render("RIGHT",True,BLACK)
+               if event.key==K_a:
+                    txt=sysfont.render("A",True,BLACK)
+               if event.key==K_b:
+                    txt=sysfont.render("B",True,BLACK)
+               if event.key==K_c:
+                    txt=sysfont.render("C",True,BLACK)
+               if event.key==K_d:
+                    txt=sysfont.render("D",True,BLACK)
+               if event.key==K_f:
+                    txt=sysfont.render("F",True,BLACK)
+               if event.key==K_e:
+                    txt=sysfont.render("E",True,BLACK)
+               if event.key==K_g:
+                    txt=sysfont.render("G",True,BLACK)
+               if event.key==K_h:
+                    txt=sysfont.render("H",True,BLACK)
+               if event.key==K_i:
+                    txt=sysfont.render("I",True,BLACK)
+               if event.key==K_j:
+                    txt=sysfont.render("J",True,BLACK)
+               if event.key==K_k:
+                    txt=sysfont.render("K",True,BLACK)
+               if event.key==K_l:
+                    txt=sysfont.render("L",True,BLACK)
+               if event.key==K_m:
+                    txt=sysfont.render("M",True,BLACK)
+               if event.key==K_n:
+                    txt=sysfont.render("N",True,BLACK)
+               if event.key==K_o:
+                    txt=sysfont.render("O",True,BLACK)
+               if event.key==K_p:
+                    txt=sysfont.render("P",True,BLACK)
+               if event.key==K_q:
+                    txt=sysfont.render("Q",True,BLACK)
+               if event.key==K_r:
+                    txt=sysfont.render("R",True,BLACK)
+               if event.key==K_s:
+                    txt=sysfont.render("S",True,BLACK)
+               if event.key==K_t:
+                    txt=sysfont.render("T",True,BLACK)
+               if event.key==K_u:
+                    txt=sysfont.render("U",True,BLACK)
+               if event.key==K_v:
+                    txt=sysfont.render("V",True,BLACK)
+               if event.key==K_w:
+                    txt=sysfont.render("W",True,BLACK)
+               if event.key==K_x:
+                    txt=sysfont.render("X",True,BLACK)
+               if event.key==K_y:
+                    txt=sysfont.render("Y",True,BLACK)
+               if event.key==K_z:
+                    txt=sysfont.render("Z",True,BLACK)
+               if event.key==K_1:
+                    txt=sysfont.render("1",True,BLACK)
+               if event.key==K_2:
+                    txt=sysfont.render("2",True,BLACK)
+               if event.key==K_3:
+                    txt=sysfont.render("3",True,BLACK)
+               if event.key==K_4:
+                    txt=sysfont.render("4",True,BLACK)
+               if event.key==K_5:
+                    txt=sysfont.render("5",True,BLACK)
+               if event.key==K_6:
+                    txt=sysfont.render("6",True,BLACK)
+               if event.key==K_7:
+                    txt=sysfont.render("7",True,BLACK)
+               if event.key==K_8:
+                    txt=sysfont.render("8",True,BLACK)
+               if event.key==K_9:
+                    txt=sysfont.render("9",True,BLACK)
+               if event.key==K_0:
+                    txt=sysfont.render("0",True,BLACK)
+               if event.key==K_BACKSPACE:
+                    txt=sysfont.render("BACKSPACE",True,BLACK)
+               if event.key==K_SPACE:
+                    txt=sysfont.render("SPACE",True,BLACK)
+               if event.key==K_F1:
+                    txt=sysfont.render("F1",True,BLACK)
+               if event.key==K_F2:
+                    txt=sysfont.render("F2",True,BLACK)
+               if event.key==K_F3:
+                    txt=sysfont.render("F3",True,BLACK)
+               if event.key==K_F4:
+                    txt=sysfont.render("F4",True,BLACK)
+               if event.key==K_F5:
+                    txt=sysfont.render("F5",True,BLACK)
+               if event.key==K_F6:
+                    txt=sysfont.render("F6",True,BLACK)
+               if event.key==K_F7:
+                    txt=sysfont.render("F7",True,BLACK)
+               if event.key==K_F8:
+                    txt=sysfont.render("F8",True,BLACK)
+               if event.key==K_F9:
+                    txt=sysfont.render("F9",True,BLACK)
+               if event.key==K_F10:
+                    txt=sysfont.render("F10",True,BLACK)
+               if event.key==K_F11:
+                    txt=sysfont.render("F11",True,BLACK)
+               if event.key==K_F12:
+                    txt=sysfont.render("F12",True,BLACK)
+               
+               if event.key==K_ESCAPE:
+                    pygame.quit()
+                    sys.exit()
+     SCREEN.blit(txt,(100,200))
+     pygame.display.update()
+     CLOCK.tick(60)
