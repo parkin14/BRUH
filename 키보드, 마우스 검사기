@@ -1,7 +1,6 @@
 import sys
 import pygame
 from pygame.locals import*
-import random
 pygame.init()
 SCREEN=pygame.display.set_mode((600,600))
 CLOCK=pygame.time.Clock()
@@ -9,6 +8,7 @@ BLACK=(0,0,0)
 WHITE=(255,255,255)
 sysfont=pygame.font.SysFont(None,36)
 txt=sysfont.render("",True,BLACK)
+coord=sysfont.render("",True,BLACK)
 while True:
      SCREEN.fill(WHITE)
      for event in pygame.event.get():
@@ -124,10 +124,22 @@ while True:
                     txt=sysfont.render("F11",True,BLACK)
                if event.key==K_F12:
                     txt=sysfont.render("F12",True,BLACK)
-               
                if event.key==K_ESCAPE:
                     pygame.quit()
                     sys.exit()
+          if  event.type == MOUSEBUTTONDOWN:
+               x,y=event.pos[0], event.pos[1]
+               coord= sysfont.render("(%d, %d)" %(x,y), True, (0,0,0))
+               if event.button==1:
+                    txt=sysfont.render("Left CLick", True, (0,0,0))
+               if event.button==2:
+                    txt=sysfont.render("Scroll Click", True, (0,0,0))
+               if event.button==3:
+                    txt=sysfont.render("Right Click", True, (0,0,0))
+               if event.button==4:
+                    txt=sysfont.render("Up Scroll", True, (0,0,0))
+               if event.button==5:
+                    txt=sysfont.render("Down Scroll", True, (0,0,0))
      SCREEN.blit(txt,(100,200))
      pygame.display.update()
      CLOCK.tick(60)
