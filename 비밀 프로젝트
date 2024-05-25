@@ -76,9 +76,9 @@ angle_line = cvs.create_line(angle_ctr, (angle_ctr[0]+angle_r*math.cos(angle_now
 tank_w, tank_h = (round(min(win_w, win_h)/10), round(min(win_w, win_h)/10))
 tank_cx = round(win_w/40+tank_w/2)
 tank_cy = top_h - round(tank_h/2)
-tank_img = Image.open("D:/temp/canon.png")
-tank_img = tank_img.resize((tank_w,tank_h), Image.ANTIALIAS)
-tank_img = tank_img.rotate(angle_now*180/math.pi-10)
+tank_img = Image.open("C:/PIL/canon.png")
+tank_img = tank_img.resize((tank_w,tank_h),Image.Resampling.NEAREST)
+tank_img = tank_img.rotate(angle_now)
 tank_img = ImageTk.PhotoImage(tank_img, master=win)
 tank = cvs.create_image(tank_cx, tank_cy, image=tank_img)
 
@@ -124,6 +124,7 @@ bbar_y = wbar_y + bbar_my
 bbar_w = (wbar_w/2 - 2*bbar_mx)*wind/100
 bbar_h = wbar_h - 2*bbar_my
 bbar = cvs.create_rectangle((bbar_x,bbar_y), (bbar_x+bbar_w,bbar_y+bbar_h), width=0, fill = "blue")
+
 # target
 t_r =40
 t_range_x = (round(win_w/3), win_w-t_r)
@@ -131,8 +132,8 @@ t_range_y = (wbar_y+wbar_h+t_r, top_h-t_r)
 # cvs.create_rectangle((t_range_x[0],t_range_y[0]), (t_range_x[1],t_range_y[1])    )
 t_cx = random.randrange(t_range_x[0], t_range_x[1])
 t_cy = random.randrange(t_range_y[0], t_range_y[1])
-t_img = Image.open("D:/temp/target.png")
-t_img = t_img.resize((t_r*2, t_r*2), Image.ANTIALIAS)
+t_img = Image.open("C:/PIL/target.png")
+t_img = t_img.resize((t_r*2, t_r*2), Image.Resampling.NEAREST)
 t_img = ImageTk.PhotoImage(t_img, master=win)
 target = cvs.create_image(t_cx, t_cy, image=t_img)
 
@@ -191,8 +192,8 @@ while True:
                 hit = False
         
     angle_line = cvs.create_line(angle_ctr, (angle_ctr[0]+angle_r*math.cos(angle_now) ,angle_ctr[1]-angle_r*math.sin(angle_now)), fill = "red", width = 3)
-    tank_img = Image.open("D:/temp/canon.png")
-    tank_img = tank_img.resize((tank_w,tank_h), Image.ANTIALIAS)
+    tank_img = Image.open("C:/PIL/canon.png")
+    tank_img = tank_img.resize((tank_w,tank_h), Image.Resampling.NEAREST)
     tank_img = tank_img.rotate(angle_now*180/math.pi-10)
     tank_img = ImageTk.PhotoImage(tank_img, master=win)
     tank = cvs.create_image(tank_cx, tank_cy, image=tank_img)
