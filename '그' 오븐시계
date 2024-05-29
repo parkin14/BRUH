@@ -1,0 +1,12 @@
+example=input(' ').split()
+p=int(input(' '))
+h=int(example[0])
+m=int(example[1])
+if p+m>=60:
+    h += (p+m)/60
+    m = (p+m)% 60
+    if h>=24:
+        h-=24
+    print('%d %d'%(h, m))
+else:
+    print('%d %d'%(h, p+m))
