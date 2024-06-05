@@ -1,0 +1,18 @@
+def calculator(a,mid,b):
+    if mid=='+':
+        x=a+b
+        return x
+    elif mid=='-':
+        x=a-b
+        return x
+    elif mid=='*':
+        x=a*b
+        return x
+    elif mid=='//':
+        x=a//b
+        return x
+mod = input().split( )
+a=int(mod[0])
+b=int(mod[2])
+mid=mod[1]
+print('%d %s %d = %d' %(a,mid,b,calculator(a,mid,b)))
