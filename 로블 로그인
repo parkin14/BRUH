@@ -1,0 +1,22 @@
+def Login(id, password):
+    if id=='parkin14' and password=='81021129zz':
+        return 1
+    elif id=='parkin14' and password!='81021129zz':
+        return 2
+    elif id!='parkin14' and password=='81021129zz':
+        return 3
+    else:
+        return 4
+def Say(result):
+    if result==1:
+        return 'Login Success.'
+    elif result==2:
+        return 'Please check your PW.'
+    elif result==3:
+        return 'Please check your ID.'
+    else:
+        return 'Please check your ID and PW.'
+id=input('ID : ')
+password=input('PW : ')
+a=Login(id,password)
+print(Say(a))
