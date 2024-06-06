@@ -1,23 +1,61 @@
 import math
 def rect(w, h):
-    return w*h
+    return round(w * h)
 def tri(w, h):
-    return w*h/2
+    return round(w * h/2)
 def circle(r):
     return round(r ** 2 * math.pi)
+def threeD_rect(w, h, H):
+    return round(w * h * H)
+def threeD_tri_tri(w, h, H):
+    return round(w * h/2 * H/3)
+def threeD_rect_tri(w, h, H):
+    return round(w * h * H/3)
+def threeD_circle_tri(r, H):
+    return round(r ** 2 * math.pi * H/3)
+def threeD_circle(r):
+    return round(4/3 * math.pi * r ** 3)
 print("Choose a shape: ")
-print("1. Rectangle","2. Triangle","3. Circle", sep='\n')
+print("1. 사각형","2. 직각삼각형","3. 원","4. 입체도형", sep='\n')
 n=int(input( ))
 
 if n==1:
-    w=int(input("가로길이 : "))
-    h=int(input("세로길이 : "))
+    w=int(input("가로 길이 : "))
+    h=int(input("세로 길이 : "))
     area=rect(w,h)
 elif n==2:
-    w=int(input("가로길이 : "))
-    h=int(input("세로길이 : "))
+    w=int(input("가로 길이 : "))
+    h=int(input("세로 길이 : "))
     area=tri(w,h)
 elif n==3:
     r=int(input("반지름의 길이 : "))
     area=circle(r)
+elif n==4:
+    print("1. 직육면체","2. x각뿔","3. 구", sep='\n')
+    n=int(input(" "))
+    if n==1:
+        w=int(input("가로 길이 : "))
+        h=int(input("세로 길이 : "))
+        H=int(input("높이 길이 : "))
+        area=threeD_rect(w, h, H)
+    elif n==2:
+        print("1. 사각뿔","2. 직각삼각뿔","3. 원뿔", sep='\n')
+        x=int(input(" "))
+        if x==1:
+            w=int(input("가로 길이 : "))
+            h=int(input("세로 길이 : "))
+            H=int(input("높이 길이 : "))
+            area=threeD_rect_tri(w, h, H)
+        elif x==2:
+            w=int(input("가로 길이 : "))
+            h=int(input("세로 길이 : "))
+            H=int(input("높이 길이 : "))
+            area=threeD_tri_tri(w, h, H)
+        elif x==3:
+            r=int(input("반지름의 길이 : "))
+            H=int(input("높이 길이 : "))
+            area=threeD_circle_tri(r, H)
+    elif n==3:
+        r=int(input("반지름의 길이 : "))
+        area=threeD_circle(r)
 print(round(area))
