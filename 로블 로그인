@@ -5,15 +5,23 @@ def Login(id, password):
         return 2
     elif id!='parkin14' and password=='81021129zz':
         return 3
-    else:
+    elif id=='jhroy14' and password=='8102##1129Zz':
         return 4
+    elif id=='jhroy14' and password!='8102#1129Zz':
+        return 2
+    elif id!='jhroy14' and password=='8102#1129Zz':
+        return 3
+    else:
+        return 5
 def Say(result):
     if result==1:
-        return 'Login Success.'
+        return 'Login Success to parkin14.'
     elif result==2:
         return 'Please check your PW.'
     elif result==3:
         return 'Please check your ID.'
+    elif result==4:
+        return 'Login Success to jhroy14'
     else:
         return 'Please check your ID and PW.'
 id=input('ID : ')
