@@ -11,6 +11,9 @@ def calculator(a,mid,b):
     elif mid=='//':
         x=a//b
         return x
+    elif mid=='**':
+        x=a**b
+        return x
 mod = input().split( )
 a=int(mod[0])
 b=int(mod[2])
