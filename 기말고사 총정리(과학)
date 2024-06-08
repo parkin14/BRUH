@@ -1,0 +1,22 @@
+import time
+
+print('Ⅰ.물질의 구성')
+time.sleep(1)
+print('H수소 He헬륨 \nLi리튬 Be베릴륨 B붕소 C탄소 N질소 O산소 F플루오린 Ne네온 \nNa나트륨 Mg마그네슘 Al알루미늄 Si규소 P인 S황 Cl염소 Ar아르곤 \nK칼륨 Ca칼슘\n')
+time.sleep(10)
+print('Ⅱ.전기와 자기')
+time.sleep(1)
+print('V전압=I전류×R저항')
+time.sleep(0.5)
+print('전자의 이동방향= - → + \n전류의 이동방향= + → -')
+
+
+
+
+
+
+
+
+
+
+        
