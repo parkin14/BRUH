@@ -1,0 +1,8 @@
+def jg(n):
+    if n<1:
+        return 1
+    if n%2==0:
+        print(n, end=' ')
+    return jg(n-1)
+x=int(input(' '))
+jg(x)
