@@ -1,0 +1,14 @@
+from tkinter import*
+win=Tk()
+def message(event):
+    lbl['text']=int(entry.get())+int(lbl['text'])
+def click():
+    lbl['text']=0
+lbl=Label(win,text='0')
+lbl.pack()
+entry=Entry(win)
+entry.bind('<Return>',message)
+entry.pack()
+btn=Button(win,text='clear',command=click)
+btn.pack()
+win.mainloop()
