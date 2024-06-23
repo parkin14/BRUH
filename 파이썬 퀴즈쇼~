@@ -19,6 +19,13 @@ def clickO():
         lblA=Label(win,text='현재 진행중',relief='solid',width=80)
         lblA.grid(row=2,column=0)
         btnA.grid(row=2,column=1)
+    elif a==6:
+        lblA=Label(win,text='맞음',relief='solid',width=80)
+        lblA.grid(row=2,column=0)
+        btnA.grid(row=2,column=1)
+    elif a==4:
+        lblA=Label(win,text='틀림',relief='solid',width=80)
+        lblA.grid(row=2,column=0)
 def clickX():
     if a==1:
         lblA=Label(win,text='맞음',relief='solid',width=80)
@@ -36,6 +43,13 @@ def clickX():
         btnA.grid(row=2,column=1)
     elif a==5:
         lblA=Label(win,text='현재 진행중',relief='solid',width=80)
+        lblA.grid(row=2,column=0)
+        btnA.grid(row=2,column=1)
+    elif a==6:
+        lblA=Label(win,text='틀림',relief='solid',width=80)
+        lblA.grid(row=2,column=0)
+    elif a==7:
+        lblA=Label(win,text='맞음',relief='solid',width=80)
         lblA.grid(row=2,column=0)
         btnA.grid(row=2,column=1)
 def clickA():
@@ -58,6 +72,13 @@ def clickA():
             lblA=Label(win,text='현재 진행중',relief='solid',width=80)
             lblA.grid(row=2,column=0)
             btnA.grid(row=2,column=1)
+        elif a==6:
+            lblA=Label(win,text='맞음',relief='solid',width=80)
+            lblA.grid(row=2,column=0)
+            btnA.grid(row=2,column=1)
+        elif a==4:
+            lblA=Label(win,text='틀림',relief='solid',width=80)
+            lblA.grid(row=2,column=0)
     def clickX():
         if a==1:
             lblA=Label(win,text='맞음',relief='solid',width=80)
@@ -77,11 +98,18 @@ def clickA():
             lblA=Label(win,text='현재 진행중',relief='solid',width=80)
             lblA.grid(row=2,column=0)
             btnA.grid(row=2,column=1)
+        elif a==6:
+            lblA=Label(win,text='틀림',relief='solid',width=80)
+            lblA.grid(row=2,column=0)
+        elif a==7:
+            lblA=Label(win,text='맞음',relief='solid',width=80)
+            lblA.grid(row=2,column=0)
+            btnA.grid(row=2,column=1)
     win=Tk()
     win.title('OX 퀴즈쇼')
-    a=randint(1,5)
+    a=randint(1,7)
     if a==1:
-        k="'def'는 어떤 값을 저장하기 위한 변수의 이름이다"
+        k="'def ~~():'는 어떤 값을 저장하기 위한 변수의 이름이며, ~~은 저장할 변수의 값이다"
     elif a==2:
         k="python에서 게임을 만들때 pygame이 아닌 tkinter라는 모듈을 사용할수있다"
     elif a==3:
@@ -90,6 +118,10 @@ def clickA():
         k="아두이노를 쓸때 S4A라는 앱을통해 텍스트 코딩으로 연결된 모듈을 조작할 수 있다"
     elif a==5:
         k="박재혁은 현재 아무도 모르게 비밀 프로젝트를 진행중이다"
+    elif a==6:
+        k="python에는 'oct'라는 함수가 있다"
+    elif a==7:
+        k="python의 창시자의 친구의 이름은 Guido van Rossum이다"
     lblQ=Label(win,text = k,relief='solid',width=80)
     lblQ.grid(row=0,column=0)
     btnO=Button(win,text='O',command=clickO,width=40)
@@ -101,9 +133,9 @@ def clickA():
 #절취선
 win=Tk()
 win.title('OX 퀴즈쇼')
-a=randint(1,5)
+a=randint(1,7)
 if a==1:
-    k="'def'는 어떤 값을 저장하기 위한 변수의 이름이다"
+    k="'def ~~():'는 어떤 값을 저장하기 위한 변수의 이름이며, ~~은 저장할 변수의 값이다"
 elif a==2:
     k="python에서 게임을 만들때 pygame이 아닌 tkinter라는 모듈을 사용할수있다"
 elif a==3:
@@ -112,6 +144,10 @@ elif a==4:
     k="아두이노를 쓸때 S4A라는 앱을통해 텍스트 코딩으로 연결된 모듈을 조작할 수 있다"
 elif a==5:
     k="박재혁은 현재 아무도 모르게 비밀 프로젝트를 진행중이다"
+elif a==6:
+    k="python에는 'oct'라는 함수가 있다"
+elif a==7:
+    k="python의 창시자의 친구의 이름은 Guido van Rossum이다"
 lblQ=Label(win,text = k,relief='solid',width=80)
 lblQ.grid(row=0,column=0)
 btnO=Button(win,text='O',command=clickO,width=40)
