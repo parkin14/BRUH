@@ -1,0 +1,32 @@
+from tkinter import*
+from random import*
+def click_front():
+    if a==1:
+        lbl_rslt=Label(win,text='correct',width=40,bg='lightyellow',fg='red')
+        lbl_rslt.grid(row=1,column=0,columnspan=2)
+    elif a==2:
+        lbl_rslt=Label(win,text='incorrect',width=40,bg='lightyellow',fg='red')
+        lbl_rslt.grid(row=1,column=0,columnspan=2)
+def click_back():
+    if a==1:
+        lbl_rslt=Label(win,text='incorrect',width=40,bg='lightyellow',fg='red')
+        lbl_rslt.grid(row=1,column=0,columnspan=2)
+    elif a==2:
+        lbl_rslt=Label(win,text='correct',width=40,bg='lightyellow',fg='red')
+        lbl_rslt.grid(row=1,column=0,columnspan=2)
+win=Tk()
+win.title('coin Game')
+a=randint(1,2)
+if a==1:
+    k=PhotoImage(file='front.png')
+elif a==2:
+    k=PhotoImage(file='back.png')
+lbl_cn=Label(win,image=k,relief='solid')
+lbl_cn.grid(row=0,column=0,columnspan=2)
+lbl_rslt=Label(win,text='',width=40,bg='lightyellow',fg='red')
+lbl_rslt.grid(row=1,column=0,columnspan=2)
+btn_frnt=Button(win,text='front',command=click_front,width=40,bg='lightblue')
+btn_frnt.grid(row=2,column=0)
+btn_bk=Button(win,text='back',command=click_back,width=40,bg='lightpink')
+btn_bk.grid(row=2,column=1)
+win.update()
