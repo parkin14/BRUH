@@ -1,26 +1,54 @@
-import random
-korean = 0
-Korean = 0
-com= random.randint(1,3)
-if com == 1:
-     korean = '가위'
-elif com == 2:
-     korean = '바위'
-elif com == 3:
-     korean = '보'
-user=int(input('가위:1 ,바위:2 ,보:3\n'))
-if user == 1:
-     Korean = '가위'
-elif user == 2:
-     Korean = '바위'
-elif user == 3:
-     Korean = '보'
-print('COM(%s): USER(%s)' %(korean, Korean))
-if com == user:
-     print('비김')
-elif com == user + 1:
-     print('ai한테 진 수쥰 나왔다ㅋ')
-elif com == user -1:
-     print('ai 수쥰 나왔다ㅋ')
-else:
-     print('ai 수쥰 나왔다ㅋ')
+from tkinter import*
+from random import*
+win=Tk()
+win.title('Rock Paper Scissors Game')
+start=PhotoImage(file='ready.png')
+def change_img(a):
+    List=['scissors.png','rock.png','paper.png']
+    com=randint(0,2)
+    com_img=PhotoImage(file=List[com])
+    user_img=PhotoImage(file=List[a])
+    lbl_com['image']=com_img
+    lbl_com.image=com_img
+    lbl_user['image']=user_img
+    lbl_user.image=user_img
+    game(com,a)
+def game(com,a):
+    if a==0:
+        if com==0:
+            lbl_rslt['text']='Draw'
+        elif com==1:
+            lbl_rslt['text']='Com win!'
+        elif com==2:
+            lbl_rslt['text']='User win!'
+    if a==1:
+        if com==0:
+            lbl_rslt['text']='User win!'
+        elif com==1:
+            lbl_rslt['text']='Draw'
+        elif com==2:
+            lbl_rslt['text']='Com win!'
+    if a==2:
+        if com==0:
+            lbl_rslt['text']='Com win!'
+        elif com==1:
+            lbl_rslt['text']='User win!'
+        elif com==2:
+            lbl_rslt['text']='Draw'
+lbl_com=Label(win,image=start,relief='solid')
+lbl_com.grid(row=0,column=0)
+lbl_user=Label(win,image=start,relief='solid')
+lbl_user.grid(row=0,column=2)
+lbl_rslt=Label(win,text='',width=40,height=2,bg='lightyellow',fg='brown')
+lbl_rslt.grid(row=0,column=1)
+btn_scissors=Button(win,text='scissors',command=lambda:change_img(0),width=20,bg='lightblue')
+btn_scissors.grid(row=2,column=0)
+btn_rock=Button(win,text='rock',command=lambda:change_img(1),width=20,bg='lightpink')
+btn_rock.grid(row=2,column=1)
+btn_paper=Button(win,text='paper',command=lambda:change_img(2),width=20,bg='lightgreen')
+btn_paper.grid(row=2,column=2)
+lbl_qwer=Label(win,text='Computer')
+lbl_qwer.grid(row=1,column=0)
+lbl_asdf=Label(win,text='User')
+lbl_asdf.grid(row=1,column=2)
+win.update()
