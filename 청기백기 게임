@@ -1,0 +1,39 @@
+from tkinter import*
+from random import*
+def change_img(b):
+    if b==0:
+        if lbl_blueF.image==blueD:
+            lbl_blueF.image==blueU
+        else:
+            lbl_blueF.image==blueD
+    elif b==1:
+        if lbl_whiteF.image==whiteU:
+            lbl_whiteF.image==whiteD
+        else:
+            lbl_whiteF.image==whiteU
+a=randint(1,4)
+if a==1:
+    x='백기올려'
+elif a==2:
+    x='백기내려'
+elif a==3:
+    x='청기올려'
+elif a==4:
+    x='청기내려'
+win=Tk()
+win.title('청기백기')
+blueD=PhotoImage(file='청기내려.png')
+blueU=PhotoImage(file='청기올려.png')
+whiteD=PhotoImage(file='백기내려.png')
+whiteU=PhotoImage(file='백기올려.png')
+lbl_blueF=Label(win,image=blueD,relief='solid')
+lbl_blueF.grid(row=1,column=0)
+lbl_whiteF=Label(win,image=whiteD,relief='solid')
+lbl_whiteF.grid(row=1,column=2)
+lbl_com=Label(win,text=x,width=40,height=2,bg='lightyellow',fg='brown')
+lbl_com.grid(row=0,column=1)
+btn_blue=Button(win,text='청기',command=lambda:change_img(0),width=20,bg='lightblue')
+btn_blue.grid(row=2,column=0)
+btn_white=Button(win,text='백기',command=lambda:change_img(1),width=20)
+btn_white.grid(row=2,column=2)
+win.update()
