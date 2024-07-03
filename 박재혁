@@ -1,0 +1,66 @@
+import time
+print('박재혁 학교과정')
+a=int(input(' 초등학교(1), 중학교(2), 고등학교(3)\n'))
+#초등학교
+if a==1:
+    print('기록 찾는중...\n')
+    time.sleep(2)
+    b=int(input(' 몇학년?(1~6)\n'))
+    if b==1:
+        print('기록 찾는중...\n')
+        time.sleep(2)
+        print('남은 기록이 없음')
+    elif b==2:
+        print('기록 찾는중...\n')
+        time.sleep(2)
+        print('남은 기록이 없음')
+    elif b==3:
+        print('기록 찾는중...\n')
+        time.sleep(2)
+        print('남은 기록이 없음')
+    elif b==4:
+        print('기록 찾는중...\n')
+        time.sleep(2)
+        print('처음으로간 가족여행(8/13 ~ 8/15 - 2박 3일)\n')
+        time.sleep(1)
+        print('처음으로한 낚시(10/??)\n')
+        time.sleep(1)
+        print('처음으로간 작은 아버지네(11/??)\n')
+    elif b==5:
+        print('기록 찾는중...')
+        time.sleep(2)
+        print('처음으로간 해외(2021/9/13 ~ 2022/6/?? - 유학)\n')
+        time.sleep(1)
+        print('-기록 삭제됨-')
+    elif b==6:
+        print('기록 찾는중...\n')
+        time.sleep(2)
+        print('-기록 삭제됨-')
+#중학교
+elif a==2:
+    print('기록 찾는중...\n')
+    time.sleep(2)
+    b=int(input(' 몇학년?(1~3)\n'))
+    if b==1:
+        print('기록 찾는중...\n')
+        time.sleep(2)
+        print('학교 오목대결에서 승리(5/??)\n')
+        time.sleep(1)
+        print('-기록 삭제됨-')
+    elif b==2:
+        print('기록 찾는중...\n')
+        time.sleep(2)
+        print('1학기 중간고사\n국어=83점\n수학=100점\n과학=81점\n영어=90점\n')
+        time.sleep(1)
+        print('1학기 기말고사\n국어=81점\n수학=96점\n도덕=64점\n과학=65점\n영어=67점\n기술가정=55점\n역사=44점\n한문=60점\n')
+        time.sleep(1)
+        print('-기록 제작중-')
+    elif b==3:
+        print('기록 찾는중...\n')
+        time.sleep(2)
+        print('기록 없음')
+#고등학교
+elif a==3:
+    print('기록 찾는중...\n')
+    time.sleep(2)
+    print('기록 없음')
