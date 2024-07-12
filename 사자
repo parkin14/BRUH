@@ -1,0 +1,17 @@
+from PIL import Image
+from PIL import ImageDraw
+lion_img=Image.open('Lion.jpg')
+frame_img=Image.open('frame.jpg')
+frame_img.thumbnail((2000,1900))
+c3coding_img=Image.open('c3coding.jpg')
+c3coding_img.thumbnail((120,120))
+lion_img2=lion_img.resize((1700,1500))
+draw=ImageDraw.Draw(lion_img)
+##lion_img.show()
+##lion_img.save('C3Lion_picture.jpg')
+print(frame_img.size)
+stx, sty = (190,190)
+lion_x , lion_y= lion_img2.size
+frame_img.paste(lion_img2, ( stx, sty , stx+lion_x, sty+lion_y))
+frame_img.show()
+
