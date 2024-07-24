@@ -1,0 +1,60 @@
+from tkinter import*
+pen_color='black'
+a=2
+def paint(event):
+    x1,y1=event.x,event.y
+    x2,y2=x1+5,y1+5
+    canvas.create_line(x1,y1,x2,y2,width=a,fill=pen_color)
+def change_color_white():
+    global pen_color
+    pen_color='white'
+def change_color_black():
+    global pen_color
+    pen_color='black'
+def change_color_blue():
+    global pen_color
+    pen_color='blue'
+def change_color_green():
+    global pen_color
+    pen_color='green'
+def change_color_yellow():
+    global pen_color
+    pen_color='yellow'
+def change_color_red():
+    global pen_color
+    pen_color='red'
+def change_pen_plus():
+    global a
+    a+=5
+    canvas.create_line(width=a,)
+def change_pen_minus():
+    global a
+    a-=5
+    canvas.create_line(width=a)
+def clear():
+    canvas.delete('all')
+win=Tk()
+canvas=Canvas(win,bg='white',width=500,height=200)
+
+btn_white=Button(win, text='white',command=change_color_white)
+btn_black=Button(win, text='black',command=change_color_black)
+btn_blue=Button(win, text='blue',command=change_color_blue)
+btn_green=Button(win, text='green',command=change_color_green)
+btn_yellow=Button(win, text='yellow',command=change_color_yellow)
+btn_red=Button(win, text='red',command=change_color_red)
+btn_plus=Button(win, text='+',command=change_pen_plus)
+btn_minus=Button(win, text='-',command=change_pen_minus)
+btn_clear=Button(win, text='clear',command=clear)
+
+canvas.grid(row=0,column=0,columnspan=5)
+btn_white.grid(row=1,column=0)
+btn_black.grid(row=1,column=1)
+btn_blue.grid(row=1,column=2)
+btn_green.grid(row=1,column=3)
+btn_yellow.grid(row=1,column=4)
+btn_red.grid(row=1,column=5)
+btn_plus.grid(row=1,column=6)
+btn_minus.grid(row=1,column=7)
+btn_clear.grid(row=1,column=8)
+win.bind('<B1-Motion>',paint)
+win.mainloop()
