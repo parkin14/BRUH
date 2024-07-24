@@ -1,0 +1,12 @@
+from tkinter import Tk
+point=Tk()
+point.title('반응 게임')
+def points():
+    #맞출때마다 1점씩 증가
+    #틀리면 1점 감소
+def timer():
+    #60에서 1초씩 감소
+    #60초가 되면 게임 종료
+def order():
+    #E,Q,클릭 중 무엇을 누를지 알려주는 커맨드
+    #order함수와 버튼이 주고가는사이에 중간 역활
