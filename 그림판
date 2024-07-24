@@ -1,0 +1,36 @@
+from tkinter import*
+pen_color='black'
+def paint(event):
+    x1,y1=event.x,event.y
+    x2,y2=x1+5,y1+5
+    canvas.create_line(x1,y1,x2,y2,width=3,fill=pen_color)
+def change_color_red():
+    global pen_color
+    pen_color='red'
+def change_color_green():
+    global pen_color
+    pen_color='green'
+def change_color_blue():
+    global pen_color
+    pen_color='blue'
+def change_color_black():
+    global pen_color
+    pen_color='black'
+def change_color_white():
+    global pen_color
+    pen_color='white'
+win=Tk()
+canvas=Canvas(win,bg='white',width=500,height=200)
+btn_red=Button(win, text='red',command=change_color_red)
+btn_green=Button(win, text='green',command=change_color_green)
+btn_blue=Button(win, text='blue',command=change_color_blue)
+btn_black=Button(win, text='black',command=change_color_black)
+btn_white=Button(win, text='white',command=change_color_white)
+canvas.grid(row=0,column=0,columnspan=5)
+btn_red.grid(row=1,column=0)
+btn_green.grid(row=1,column=1)
+btn_blue.grid(row=1,column=2)
+btn_black.grid(row=1,column=3)
+btn_white.grid(row=1,column=4)
+win.bind('<B1-Motion>',paint)
+win.mainloop()
