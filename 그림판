@@ -1,23 +1,22 @@
 from tkinter import*
-pen_color='black'
-a=2
+def paint(event):
+     global pen_size
+     global pen_color
+     x1,y1=event.x,event.y
+     x2,y2=event.x+pen_size,event.y+pen_size
+     canvas.create_line(x1,y1,x2,y2,width=pen_size,fill=pen_color)
 def change_size(btn):
     global shape_size, pen_size,my_tool
     if my_tool=='pen':
         if btn=='plus':
-            pen_size += 1
-        elif btn=='minus' and pen_size > 2:
-            pen_size -= 1
+            pen_size += 3
+        elif btn=='minus' and pen_size > 4:
+            pen_size -= 3
     else:
         if btn=='plus':
-            shape_size += 1
-        elif btn=='minus' and shape_size > 10:
-            shape_size -= 1
-
-def paint(event):
-    x1,y1=event.x,event.y
-    x2,y2=x1+5,y1+5
-    canvas.create_line(x1,y1,x2,y2,width=a,fill=pen_color)
+            shape_size += 3
+        elif btn=='minus' and shape_size > 10000:
+            shape_size -= 3
 def draw_shape(event):
     global shape_size,my_tool
     x1,y1=event.x,event.y
@@ -25,7 +24,7 @@ def draw_shape(event):
     if my_tool=='oval':
         canvas.create_oval(x1-(shape_size/2),y1,x2-(shape_size/2),y2,fill=fill_color)
     elif my_tool=='rect':
-        canvas.create_rectangle(x1,y1,x2,y2,fill=fil_color)
+        canvas.create_rectangle(x1,y1,x2,y2,fill=fill_color)
     elif my_tool=='tri':
         canvas.create_polygon(x1,y1,x2,y2,(x1-(shape_size)),y2,fill=fill_color,outline='black')
 def change_color(color):
@@ -73,14 +72,14 @@ def change_tool(tool):
 def clear():
     canvas.delete('all')
 win=Tk()
-canvas=Canvas(win,bg='white',width=500,height=500)
 
+canvas=Canvas(win,bg='white',width=700,height=700)
 pen_color='black'
 pen_size=2
 shape_size=10
 my_tool='pen'
 fill_color='white'
-w,h=13,2
+w,h=19,2
 
 btn_white=Button(win, text='white',width=w,height=h,command=lambda:change_color('white'),bg='white')
 btn_black=Button(win, text='black',width=w,height=h,command=lambda:change_color('black'),bg='black',fg='white')
@@ -88,15 +87,15 @@ btn_blue=Button(win, text='blue',width=w,height=h,command=lambda:change_color('b
 btn_green=Button(win, text='green',width=w,height=h,command=lambda:change_color('green'),bg='green')
 btn_yellow=Button(win, text='yellow',width=w,height=h,command=lambda:change_color('yellow'),bg='yellow')
 btn_red=Button(win, text='red',width=w,height=h,command=lambda:change_color('red'),bg='red')
-btn_plus=Button(win, text='+',width=w,height=h,command=change_size)
-btn_minus=Button(win, text='-',width=w,height=h,command=change_size)
+btn_plus=Button(win, text='+',width=w,height=h,command=lambda:change_size('plus'))
+btn_minus=Button(win, text='-',width=w,height=h,command=lambda:change_size('minus'))
 btn_clear=Button(win, text='clear',width=w,height=h,command=clear)
-btn_rect=Button(win, text='□',width=w,height=h)
-btn_tri=Button(win, text='△',width=w,height=h)
-btn_oval=Button(win, text='○',width=w,height=h)
-btn_canvas=Button(win, text='canvas\ncolor',width=w,height=h)
-btn_pen=Button(win, text='pen\ncolor',width=w,height=h)
-btn_fill=Button(win, text='fill\ncolor',width=w,height=h)
+btn_rect=Button(win, text='□',width=w,height=h,command=lambda:change_tool("rect"))
+btn_tri=Button(win, text='△',width=w,height=h,command=lambda:change_tool("tri"))
+btn_oval=Button(win, text='○',width=w,height=h,command=lambda:change_tool("oval"))
+btn_canvas=Button(win, text='canvas\ncolor',width=w,height=h,command=lambda:change_tool("canvas"))
+btn_pen=Button(win, text='pen\ncolor',width=w,height=h,command=lambda:change_tool("pen"))
+btn_fill=Button(win, text='fill\ncolor',width=w,height=h,command=lambda:change_tool("fill"))
 
 canvas.grid(row=0,column=0,columnspan=5)
 btn_white.grid(row=2,column=1)
@@ -116,4 +115,5 @@ btn_pen.grid(row=2,column=0)
 btn_fill.grid(row=3,column=0)
 
 win.bind('<B1-Motion>',paint)
+win.bind('<Double-Button-1>',draw_shape)
 win.mainloop()
