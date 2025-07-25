@@ -1,0 +1,14 @@
+from tkinter import *
+def double_click(event):
+    index=listbox.curselection()
+    lbl_date["text"]=listbox.get(index[0])
+day=["Mon","Tue","Wed",'Thu','Fri','Sat','Sun']
+win=Tk()
+lbl_date=Label(win,text='')
+listbox=Listbox(win)
+for i in range(7):
+    listbox.insert(i,day[i])
+listbox.bind("<Double-Button-1>",double_click)
+lbl_date.pack()
+listbox.pack()
+win.mainloop()
