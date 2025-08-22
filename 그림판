@@ -22,14 +22,38 @@ def draw_shape(event):
         canvas.create_polygon(x1,y1,x2,y2,x1-(shape_size/2),y2,fill=fill_color,outline='black')
 
 def change_size(btn):
-    global pen_size
-    if btn=='plus':
-        pen_size+=1
+    global pen_size,shape_size,tool
+    if tool=='pen':
+        if btn=='plus':
+            pen_size+=1
+        else:
+            pen_size-=1
     else:
-        pen_size-=1
+        if btn=='plus':
+            shape_size+=10
+        elif btn=='minus' and shape_size > 10:
+            pen_size-=10
+    
 def change_tool(t):
     global tool
     tool=t
+    if tool=='oval':
+        btn_oval['relief']='groove'
+        btn_rect['relief']='raised'
+        btn_tri['relief']='raised'
+    elif tool=='rect':
+        btn_oval['relief']='raised'
+        btn_rect['relief']='groove'
+        btn_tri['relief']='raised'
+    elif tool=='tri':
+        btn_oval['relief']='raised'
+        btn_rect['relief']='raised'
+        btn_tri['relief']='groove'
+    else:
+        btn_oval['relief']='raised'
+        btn_rect['relief']='raised'
+        btn_tri['relief']='raised'
+    
 def change_color(color):
     global pen_color,tool,canvas_color,fill_color
     if tool=='pen':
@@ -61,15 +85,16 @@ w,h=13,2
 win=Tk()
 canvas=Canvas(win,bg='white',width=510,height=470)
 canvas.bind("<B1-Motion>",paint)
-btn1=Button(win,text="white",width=w,height=h,fg='black',bg='white',command=lambda : change_color("white"))
-btn2=Button(win,text="black",width=w,height=h,fg='white',bg='black',command=lambda : change_color("black"))
-btn3=Button(win,text="blue",width=w,height=h,fg='white',bg='blue',command=lambda : change_color("blue"))
-btn4=Button(win,text="green",width=w,height=h,fg='white',bg='green',command=lambda : change_color("green"))
-btn5=Button(win,text="yellow",width=w,height=h,fg='black',bg='yellow',command=lambda : change_color("yellow"))
-btn6=Button(win,text="red",width=w,height=h,fg='white',bg='red',command=lambda : change_color("red"))
-btn7=Button(win,text="+",width=w,height=h,command=lambda : change_size("plus"))
-btn8=Button(win,text="-",width=w,height=h,command=lambda : change_size("minus"))
-btn9=Button(win,text="clear",width=w,height=h,command=clear_canvas)
+canvas.bind("<Double-Button-1>",draw_shape)
+btn_white=Button(win,text="white",width=w,height=h,fg='black',bg='white',command=lambda : change_color("white"))
+btn_black=Button(win,text="black",width=w,height=h,fg='white',bg='black',command=lambda : change_color("black"))
+btn_blue=Button(win,text="blue",width=w,height=h,fg='white',bg='blue',command=lambda : change_color("blue"))
+btn_green=Button(win,text="green",width=w,height=h,fg='white',bg='green',command=lambda : change_color("green"))
+btn_yellow=Button(win,text="yellow",width=w,height=h,fg='black',bg='yellow',command=lambda : change_color("yellow"))
+btn_red=Button(win,text="red",width=w,height=h,fg='white',bg='red',command=lambda : change_color("red"))
+btn_plus=Button(win,text="+",width=w,height=h,fg='black',bg='white',command=lambda : change_size("plus"))
+btn_minus=Button(win,text="-",width=w,height=h,fg='black',bg='white',command=lambda : change_size("minus"))
+btn_clear=Button(win,text="clear",width=w,height=h,fg='black',bg='white',command=clear_canvas)
 btn_canvas=Button(win,text="canvas\ncolor",fg='black',bg='white',width=w,height=h,command=lambda : change_tool("canvas"))
 btn_pen=Button(win,text="pen\ncolor",fg='white',bg='black',width=w,height=h,command=lambda : change_tool("pen"))
 btn_fill=Button(win,text="fill\ncolor",fg='black',bg='white',width=w,height=h,command=lambda : change_tool("shape"))
@@ -77,15 +102,20 @@ btn_oval=Button(win,text='○',bg='white',width=w,height=h,command=lambda:change
 btn_rect=Button(win,text='□',bg='white',width=w,height=h,command=lambda:change_tool("rect"))
 btn_tri=Button(win,text='△',bg='white',width=w,height=h,command=lambda:change_tool("tri"))
 canvas.grid(row= 0,column= 0,columnspan=6)
-btn1.grid(row= 2,column= 1)
-btn2.grid(row= 1,column= 1)
-btn3.grid(row= 1,column= 2)
-btn4.grid(row= 1,column= 3)
-btn5.grid(row= 2,column= 3)
-btn6.grid(row= 2,column= 2)
-btn7.grid(row= 1,column= 4)
-btn8.grid(row= 2,column= 4)
-btn9.grid(row= 2,column= 5)
 btn_canvas.grid(row= 1,column= 0)
+btn_black.grid(row= 1,column= 1)
+btn_blue.grid(row= 1,column= 2)
+btn_green.grid(row= 1,column= 3)
+btn_plus.grid(row= 1,column= 4)
 btn_pen.grid(row= 2,column= 0)
+btn_white.grid(row= 2,column= 1)
+btn_red.grid(row= 2,column= 2)
+btn_yellow.grid(row= 2,column= 3)
+btn_minus.grid(row= 2,column= 4)
+btn_fill.grid(row=3,column=0)
+btn_oval.grid(row=3,column=1)
+btn_rect.grid(row=3,column=2)
+btn_tri.grid(row=3,column=3)
+btn_clear.grid(row= 3,column=4)
+
 win.mainloop()
